@@ -1,27 +1,46 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom right, #74ebd5, #ACB6E5);
+  background: linear-gradient(to right, #74ebd5, #acb6e5);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 100vh;
+  justify-content: center;
+}
+
+.running-text {
+  width: 100%;
+  background-color: white;
+  color: #444;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+  border-bottom: 2px solid #74ebd5;
+  position: absolute;
+  top: 0;
 }
 
 .card {
   background: white;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   padding: 2rem;
   text-align: center;
-  max-width: 400px;
   width: 90%;
-  transition: transform 0.3s;
+  max-width: 400px;
+  margin-top: 80px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .profile-pic {
@@ -41,25 +60,27 @@ h1 {
 
 p {
   font-size: 1rem;
-  color: #666;
+  color: #555;
+  margin-bottom: 1.5rem;
 }
 
-.socials a {
-  margin: 0 10px;
-  text-decoration: none;
-  font-size: 1.4rem;
-  color: #74ebd5;
-  transition: color 0.3s;
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.socials a:hover {
-  color: #333;
-}
-.running-text {
-  background-color: #fff;
-  color: #333;
+.btn {
+  display: inline-block;
+  background-color: #74ebd5;
+  color: white;
   padding: 10px;
-  font-weight: bold;
-  font-size: 1.1rem;
-  border-bottom: 2px solid #74ebd5;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background-color: #50c9c3;
 }
